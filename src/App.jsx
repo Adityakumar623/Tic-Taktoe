@@ -59,11 +59,15 @@ const last=prev[prev.length-1];
 
  return(
   <div className="app">
-    <h1>Tic Tak Toe</h1>
+    <h1>Tic <span className="text-green">Tak</span> Toe</h1>
     <StatusMessage  winner={winner}  current ={current}/>
     <Board board={current.board} handleSquareClick={handleSquareClick} winningSquares={winningSquares} />
-     <button type="button" onClick={onNewGame}>Start New game</button>
+     <button type="button" onClick={onNewGame} className={`btn-reset ${winner ? 'active':' '}`}>
+      Start New game
+      </button>
+      <h2 style={{fontWeight : 'normal'}}>Current game</h2>
      <History history={history} moveTo={moveTo}  currentMove={currentMove}/>
+  <div className="bg-balls"/>
   </div>
  );
 
